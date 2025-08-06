@@ -1973,6 +1973,20 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.8.tgz#958b91c991b1867ced318bedea0e215ee050726e"
   integrity sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==
 
+"@types/fullpage.js@^2.9.6":
+  version "2.9.6"
+  resolved "https://registry.yarnpkg.com/@types/fullpage.js/-/fullpage.js-2.9.6.tgz#09bff9f72c9cc3f185b1b434643b9dd9910f60d1"
+  integrity sha512-NNl9nQc2g7C0Dc7rokZhyy8IJJh/HNVdPE23Tne6nb6rOknetNzwu3gBNP/zMRMeawHRe8i149yWrpzJ4lUwxg==
+  dependencies:
+    "@types/jquery" "*"
+
+"@types/jquery@*":
+  version "3.5.32"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.32.tgz#3eb0da20611b92c7c49ebed6163b52a4fdc57def"
+  integrity sha512-b9Xbf4CkMqS02YH8zACqN1xzdxc3cO735Qe5AbSUFmyOiaWAbcpqh9Wna+Uk0vgACvoQHpWDg2rGdHkYPLmCiQ==
+  dependencies:
+    "@types/sizzle" "*"
+
 "@types/node@*":
   version "24.2.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-24.2.0.tgz#cde712f88c5190006d6b069232582ecd1f94a760"
@@ -1996,6 +2010,11 @@
   version "1.20.2"
   resolved "https://registry.yarnpkg.com/@types/resolve/-/resolve-1.20.2.tgz#97d26e00cd4a0423b4af620abecf3e6f442b7975"
   integrity sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==
+
+"@types/sizzle@*":
+  version "2.3.9"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.9.tgz#d4597dbd4618264c414d7429363e3f50acb66ea2"
+  integrity sha512-xzLEyKB50yqCUPUJkIsrVvoWNfFUbIZI+RspLWt8u+tIW/BetMBZtgV2LY/2o+tYH8dRvQ+eoPf3NdhQCcLE2w==
 
 "@types/triple-beam@^1.3.2":
   version "1.3.5"
@@ -4019,6 +4038,11 @@ graceful-fs@^4.2.0, graceful-fs@^4.2.11, graceful-fs@^4.2.4, graceful-fs@^4.2.9:
   version "4.2.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
+
+gsap@^3.13.0:
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.13.0.tgz#597d4e019a2bb487785387d91296adebf92db9dd"
+  integrity sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw==
 
 gzip-size@^7.0.0:
   version "7.0.0"

@@ -13,9 +13,13 @@
     "@nuxt/image": "1.11.0",
     "@nuxt/ui": "3.3.0",
     "fullpage.js": "^4.0.37",
+    "gsap": "^3.13.0",
     "nuxt": "^4.0.1",
     "typescript": "^5.6.3",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/fullpage.js": "^2.9.6"
   }
 }
