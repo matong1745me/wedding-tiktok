@@ -1,91 +1,170 @@
 <script setup>
+import { onMounted, watch, ref } from 'vue'
 import gsap from 'gsap'
-
 import CutoutText from '../CutoutText.vue'
 
-onMounted(() => {
-  const character_1 = document.getElementById('character_1')
-  gsap.set(character_1, {
+// รับ props สำหรับ active state
+const props = defineProps({
+  isActive: Boolean
+})
+
+const characterRef = ref(null)
+const text_0 = ref(null)
+const text_1 = ref(null)
+const text_2 = ref(null)
+const text_3 = ref(null)
+const text_4 = ref(null)
+const text_5 = ref(null)
+const text_6 = ref(null)
+const text_7 = ref(null)
+const popupRef = ref(null)
+let textWiggleTimelines = []
+
+function playAnimation() {
+  // ตัวละคร
+  gsap.set(characterRef.value, {
     top: '100%',
     opacity: 1,
     rotate: -2,
-    x: '5%'
   })
-  gsap.to(character_1, {
-    y: '-150%',
+
+  gsap.to(characterRef.value, {
+    y: '-115%',
     opacity: 1,
     duration: 3.5,
     ease: "power3.out",
     onComplete: () => {
-      gsap.to(character_1, {
+      gsap.to(characterRef.value, {
         rotation: 4,
         repeat: -1,
         yoyo: true,
         duration: 1,
         ease: "sine.inOut",
-      });
+      })
     }
-  });
-  
-  const text_1 = document.getElementById('text_1')
-  const text_2 = document.getElementById('text_2')
-  const text_3 = document.getElementById('text_3')
-  const text_4 = document.getElementById('text_4')
-  const text_5 = document.getElementById('text_5')
-  const text_6 = document.getElementById('text_6')
-  const text_7 = document.getElementById('text_7')
-  const welcomeText = [text_1, text_2, text_3, text_4, text_5, text_6, text_7];
-  let tl = gsap.timeline();
-  welcomeText.forEach((el, i) => {
-    tl.to(el, {
+  })
+
+  // ข้อความ
+  let tl = gsap.timeline()
+  const textRefs = [text_0.value, text_1.value, text_2.value, text_3.value, text_4.value, text_5.value, text_6.value]
+  gsap.to(popupRef.value, {
+    y: '-400%',
+    duration: 0.5,
+    ease: "power3.out",
+  })
+  textRefs.forEach((elRef, i) => {
+    tl.to(elRef.el, {
       scale: 1,
       opacity: 1,
       duration: 1,
       ease: "power3.out",
-    }, i === 0 ? 0 : "-=0.5");
-  });
-  tl.eventCallback("onComplete", () => {
-  welcomeText.forEach((el, i) => {
-    if (i % 2 === 0) {
-      const wiggle = gsap.timeline({ repeat: -1, yoyo: true });
-      wiggle
-        .to(el, {
-          rotation: 4,
-          scale: 1.2,
-          duration: 0.4,
-          ease: "sine.inOut",
-        })
-        .to(el, {
-          rotation: -4,
-          duration: 0.2,
-          ease: "sine.inOut",
-        })
-        .to(el, {
-          rotation: 4,
-          duration: 0.2,
-          ease: "sine.inOut",
-        })
-        .to(el, {
-          rotation: 0,
-          scale: 1,
-          duration: 0.4,
-          ease: "sine.inOut",
-        });
-    }
-  });
-});
+    }, i === 0 ? 0 : "-=0.5")
+  })
+  tl.to(text_7.value, {
+    scale: 1,
+    opacity: 1,
+    duration: 1,
+    ease: "power3.out",
+  })
+
+  // เอฟเฟกต์สั่นหลังจากเสร็จ
+  // tl.eventCallback("onComplete", () => {
+
+  //   const textRefs = [text_0.value, text_1.value, text_2.value, text_3.value, text_4.value, text_5.value, text_6.value]
+  //   textRefs.forEach((elRef, i) => {
+  //     if (i % 2 === 0) {
+  //       const wiggle = gsap.timeline({ repeat: -1, yoyo: true })
+  //       wiggle
+  //         .to(elRef.el, {
+  //           rotation: 4,
+  //           scale: 1.2,
+  //           duration: 0.4,
+  //           ease: "sine.inOut",
+  //         })
+  //         .to(elRef.el, {
+  //           rotation: -4,
+  //           duration: 0.2,
+  //           ease: "sine.inOut",
+  //         })
+  //         .to(elRef.el, {
+  //           rotation: 4,
+  //           duration: 0.2,
+  //           ease: "sine.inOut",
+  //         })
+  //         .to(elRef.el, {
+  //           rotation: 0,
+  //           scale: 1,
+  //           duration: 0.4,
+  //           ease: "sine.inOut",
+  //         })
+  //       textWiggleTimelines.push(wiggle)
+  //     }
+  //   })
+  // })
+}
+
+function resetAnimation() {
+
+  const textRefs = [text_0.value, text_1.value, text_2.value, text_3.value, text_4.value, text_5.value, text_6.value]
+  gsap.killTweensOf("*")
+  gsap.set(characterRef.value, {
+    clearProps: "all"
+  })
+  textRefs.forEach((elRef) => {
+    gsap.set(elRef.el, {
+      clearProps: "all"
+    })
+  })
+  gsap.set(text_7.value, {
+    clearProps: 'all'
+  })
+
+  gsap.set(popupRef.value, {
+    clearProps: 'all'
+  })
+
+  // ล้าง timeline ที่ wiggle
+  textWiggleTimelines.forEach(tl => tl.kill())
+  textWiggleTimelines = []
+}
+
+onMounted(() => {
+  if (props.isActive) playAnimation()
 })
 
+watch(() => props.isActive, (newVal) => {
+  if (newVal) {
+    playAnimation()
+  } else {
+    resetAnimation()
+  }
+})
 </script>
 
 <template>
-  <img src="/images/bg.jpg" class=" h-screen object-cover" alt="bg" />
-  <img id="character_1" src="/images/character-1.png" class="absolute z-10" alt="character-1" />
-  <cutout-text id="text_1" text="w" class="absolute z-10 top-20 left-10 opacity-0 scale-200" />
-  <cutout-text id="text_2" text="e" class="absolute z-10 top-25 left-30 opacity-0 scale-200" />
-  <cutout-text id="text_3" text="l" class="absolute z-10 top-23 left-45 opacity-0 scale-200" />
-  <cutout-text id="text_4" text="c" class="absolute z-10 top-40 left-40 opacity-0 scale-200" />
-  <cutout-text id="text_5" text="o" class="absolute z-10 top-40 left-55 opacity-0 scale-200" />
-  <cutout-text id="text_6" text="m" class="absolute z-10 top-40 left-70 opacity-0 scale-200" />
-  <cutout-text id="text_7" text="e" class="absolute z-10 top-40 left-90 opacity-0 scale-200" />
+  <img src="/images/bg.png" class="h-screen object-cover" alt="bg" />
+  <img
+    ref="characterRef"
+    src="/images/character-1-1.png"
+    class="w-10/12 absolute z-10 left-[3%]"
+    alt="character-1"
+  />
+
+  <cutout-text ref="text_0" :style-no="0" text="w" class="absolute z-10 top-[10%] left-[5%] opacity-0 scale-200" />
+  <cutout-text ref="text_1" :style-no="1" text="e" class="absolute z-10 top-[12%] left-[25%] opacity-0 scale-200" />
+  <cutout-text ref="text_2" :style-no="2" text="d" class="absolute z-10 top-[11%] left-[35%] opacity-0 scale-200" />
+  <cutout-text ref="text_3" :style-no="3" text="d" class="absolute z-10 top-[12%] left-[45%] opacity-0 scale-200" />
+  <cutout-text ref="text_4" :style-no="4" text="i" class="absolute z-10 top-[11%] left-[55%] opacity-0 scale-200" />
+  <cutout-text ref="text_5" :style-no="5" text="n" class="absolute z-10 top-[12%] left-[65%] opacity-0 scale-200" />
+  <cutout-text ref="text_6" :style-no="6" text="g" class="absolute z-10 top-[11%] left-[82%] opacity-0 scale-200" />
+  <div ref="text_7" class="absolute z-10 top-[5%] right-[6%] opacity-0 scale-200 text-5xl text-white font-c">
+    Invitaion
+  </div>
+  <img src="/images/stickers/star.png" alt="" class="absolute top-[30%] left-[10%] w-[10%]">
+  <img src="/images/stickers/yellow-heart.png" alt="" class="absolute top-[25%] right-[20%] w-[13%]">
+  <img src="/images/stickers/white-flower.png" alt="" class="absolute top-[25%] left-[30%] w-[12%]">
+  <img src="/images/stickers/green-face.png" alt="" class="absolute top-[40%] right-[18%] w-[13%]">
+  <img src="/images/stickers/roller.png" alt="" class="absolute top-[35%] left-[40%] w-[20%]">
+  <img src="/images/stickers/yellow-smile.png" alt="" class="absolute top-[40%] left-[10%] w-[13%]">
+  <img ref="popupRef" src="/images/overlay-popup.png" alt="popup" class="absolute top-[100%] left-[-10%] z-50 scale-400 origin-top">
 </template>

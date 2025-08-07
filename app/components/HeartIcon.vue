@@ -17,7 +17,8 @@ const formatNumberShort = (num) => {
 
 const createHeart = () => {
   const heart = document.createElement('div')
-  heart.innerText = '❤️'
+  const hearts = ['❤️', '💜', '💚', '🧡', '💛'];
+  heart.innerText = hearts[Math.floor(Math.random() * hearts.length)]
   heart.className = 'absolute text-2xl select-none'
 
   const startLeft = Math.random() * 80 + 10 // 10% - 90%
@@ -70,8 +71,8 @@ const handleClick = () => {
           @touchend="isPressed = false"
           @touchcancel="isPressed = false"
         >
-          <UIcon name="i-mdi-cards-heart" class="size-10" />
+          <UIcon name="i-mdi-cards-heart" class="size-10 text-white" />
         </button>
-        <span>{{ formatNumberShort(likeCount) }}</span>
+        <span class="text-white">{{ formatNumberShort(likeCount) }}</span>
       </div>
 </template>

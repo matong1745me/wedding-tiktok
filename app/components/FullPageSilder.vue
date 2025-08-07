@@ -1,39 +1,55 @@
 <script setup>
-import { onMounted, ref } from 'vue'
-import { useNuxtApp } from '#app'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
 
 import HeartIcon from './HeartIcon.vue'
 
 import Scene1 from './scenes/Scene1.vue'
+import Scene2 from './scenes/Scene2.vue'
 
-const selected = ref(0)
-const slides = [Scene1]
+const activeIndex = ref(0)
+const onSlideChange = (swiper) => {
+  activeIndex.value = swiper.activeIndex
+}
+
 </script>
 
 <template>
-  <div class="relative h-screen w-screen">
-    <UCarousel
-      class="w-full h-full"
-      orientation="vertical"
-      v-model="selected"
-      :items="slides"
+  <div class="relative h-[100dvh] w-screen overflow-hidden">
+    <swiper
+      direction="vertical"
+      :slides-per-view="1"
+      :space-between="0"
+      :mousewheel="true"
+      :keyboard="true"
+      :grab-cursor="true"
+      :threshold="5"
+      :speed="400"
+      class="h-[100dvh] w-screen"
+      @slideChange="onSlideChange"
     >
-      <template #default="{ item }" class="h-full w-full">
-        <component :is="item"/>
-      </template>
-    </UCarousel>
-    <div class="absolute bottom-1 right-1 z-50 flex flex-col-reverse items-center gap-3">
+      <SwiperSlide>
+        <scene-1 :is-active="activeIndex === 0" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <scene-2 :is-active="activeIndex === 1" />
+      </SwiperSlide>
+    </swiper>
+    <div class="absolute bottom-[15%] right-[2%] z-50 flex flex-col-reverse items-center gap-3">
       <div class="flex flex-col items-center">
-        <u-icon name="i-tabler-gift-filled" class="size-10" />
-        <span>ของขวัญ</span>
+        <u-icon name="i-tabler:disc-filled" class="size-10 animate-spin text-white" />
       </div>
       <div class="flex flex-col items-center">
-        <u-icon name="i-bitcoin-icons-sign-filled" class="size-10" />
-        <span>ลงชื่อ</span>
+        <u-icon name="i-tabler-gift-filled" class="size-10 text-white" />
+        <span class="text-white">ของขวัญ</span>
       </div>
       <div class="flex flex-col items-center">
-        <u-icon name="i-ion-navigate-circle" class="size-10" />
-        <span>พิกัด</span>
+        <u-icon name="i-bitcoin-icons-sign-filled" class="size-10 text-white" />
+        <span class="text-white">ลงชื่อ</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <u-icon name="i-ion-navigate-circle" class="size-10 text-white" />
+        <span class="text-white">พิกัด</span>
       </div>
       <heart-icon />
     </div>
@@ -42,12 +58,7 @@ const slides = [Scene1]
 
 
 <style scoped>
-.section {
-  height: 100vh;
-  font-size: 2rem;
-}
-
-.fp-overflow {
-  height: 100vh !important;
+.touch-pan-y {
+  touch-action: pan-y;
 }
 </style>
