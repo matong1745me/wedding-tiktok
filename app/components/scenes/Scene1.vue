@@ -145,7 +145,7 @@ watch(() => props.isActive, (newVal) => {
   <img src="/images/bg.png" class="h-screen object-cover" alt="bg" />
   <img
     ref="characterRef"
-    src="/images/character-1-1.png"
+    src="/images/character-1.png"
     class="w-10/12 absolute z-10 left-[3%]"
     alt="character-1"
   />
