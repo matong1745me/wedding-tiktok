@@ -65,6 +65,9 @@ const resetAnimation = () => {
   gsap.set('#popup-2', {
     y: '400%',
   })
+  gsap.set('#dot-2', {
+    x: '-100%'
+  })
   gsap.set([
     '#flower-2',
     '#smile-2',
