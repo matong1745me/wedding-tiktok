@@ -60,7 +60,7 @@ watch(() => props.isActive, (newVal) => {
 
 <template>
   <div class="relative h-[100dvh] w-screen">
-    <img src="/images/character-theme.jpg" class="h-[100dvh] w-full object-cover" alt="bg" />
+    <img src="/images/character-theme.png" class="h-[100dvh] w-full object-cover" alt="bg" />
     <img ref="a21" src="/images/stickers/yellow-smile.png" alt="smile" class="absolute top-[10%] rotate-[5deg] w-[20%] left-[5%]">
     <img ref="a22" src="/images/stickers/flower-dot.png" alt="flower" class="absolute top-[20%] rotate-[5deg] w-[50%] left-[0%]">
     <img ref="a23" src="/images/stickers/sharp.png" alt="smile" class="absolute top-[30%] w-[15%] right-[5%]">

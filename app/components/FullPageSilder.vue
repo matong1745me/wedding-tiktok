@@ -12,6 +12,7 @@ import SceneCalendar from './scenes/SceneCalendar.vue'
 import Scene6 from './scenes/Scene6.vue'
 import Scene7 from './scenes/Scene7.vue'
 import SceneTheme from './scenes/SceneTheme.vue'
+import SceneContact from './scenes/SceneContact.vue'
 
 const activeIndex = ref(0)
 const onSlideChange = (swiper) => {
@@ -47,6 +48,9 @@ const onSlideChange = (swiper) => {
       </SwiperSlide>
       <SwiperSlide>
         <scene-theme :is-active="activeIndex === 7" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <scene-contact :is-active="activeIndex === 8" />
       </SwiperSlide>
     </swiper>
     <div class="absolute bottom-[15%] right-[2%] z-50 flex flex-col-reverse items-center gap-3">
