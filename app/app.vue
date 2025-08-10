@@ -1,12 +1,23 @@
 <script setup>
-import FullPageSilder from '~/components/FullPageSilder.vue'
+import { ref } from 'vue'
+import FullPageSlider from '~/components/FullPageSilder.vue'
+import Preloader from '~/components/Preloader.vue'
 
+const showPreloader = ref(true)
+
+function handlePreloaderDone() {
+  showPreloader.value = false
+}
 </script>
+
 <template>
   <UApp>
-    <full-page-silder />
+    <!-- <Preloader v-if="showPreloader" @done="handlePreloaderDone" />
+    <FullPageSlider v-else /> -->
+    <FullPageSlider />
   </UApp>
 </template>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
