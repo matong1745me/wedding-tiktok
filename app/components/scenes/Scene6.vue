@@ -15,34 +15,8 @@ const a24 = ref(null)
 const a25 = ref(null)
 
 const playAnimation = () => {
-  gsap.to(p2.value, {
-    y: '0%',
-    duration: 1,
-    ease: "power3.out",
-  })
-  gsap.to(a22.value, {
-    x: '-50%',
-    opacity: 1,
-    duration: 1,
-    ease: "power3.out",
-    onComplete: () => {
-      gsap.to(a22.value, {
-        rotate: 360,
-        duration: 4,
-        repeat: -1,
-        ease: "linear"
-      })
-    }
-  })
 }
 const resetAnimation = () => {
-  gsap.set(p2.value, {
-    y: '400%',
-  })
-  gsap.set(a22.value, {
-    x: '-100%',
-    opacity: 0,
-  })
 }
 
 onMounted(() => {

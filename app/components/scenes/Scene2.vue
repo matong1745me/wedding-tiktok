@@ -10,8 +10,8 @@ const props = defineProps({
 
 const playAnimation = () => {
   gsap.to('#popup-2', {
-    y: '0%',
-    duration: 1,
+    y: '-400%',
+    duration: 0.5,
     ease: "power3.out",
   })
   gsap.to('#dot-2', {
@@ -100,18 +100,18 @@ watch(() => props.isActive, (newVal) => {
 <template>
   <div class="relative h-[100dvh] w-screen">
     <img src="/images/bg.png" class="h-[100dvh] w-full object-cover" alt="bg" />
-    <span animate id="mainText" class="text-6xl font-c absolute top-[10%] right-[5%] rotate-[2deg]">แต่งงานแล้ว</span>
-    <img id="character-2" src="/images/character-2.png" class="w-10/12 absolute z-10 left-[3%] bottom-[10%]"
+    <span animate id="mainText" class="text-6xl font-c absolute top-[10%] right-[10%] rotate-[2deg] text-white">แต่งงานแล้ว</span>
+    <img id="character-2" src="/images/character-2.png" class="w-9/12 absolute z-10 left-[5%] bottom-[15%]"
       alt="character-2" />
     <img id="smile-2" src="/images/stickers/yellow-smile.png" alt="smile"
-      class="absolute top-[10%] rotate-[5deg] w-[20%] left-[5%]">
+      class="absolute top-[10%] rotate-[5deg] w-[15%] left-[5%]">
     <img id="dot-2" src="/images/stickers/flower-dot.png" alt="flower"
       class="absolute top-[20%] rotate-[5deg] w-[50%] left-[0%] translate-x-[-100%]">
     <img id="sharp-2" src="/images/stickers/sharp.png" alt="smile" class="absolute top-[30%] w-[15%] right-[5%]">
     <img id="roller-2" src="/images/stickers/roller.png" alt="smile"
       class="absolute top-[4%] w-[14%] right-[5%] rotate-[45deg]">
-    <img id="flower-2" src="/images/stickers/white-flower.png" alt="smile" class="absolute top-[20%] w-[18%] right-[35%]">
+    <img id="flower-2" src="/images/stickers/white-flower.png" alt="smile" class="absolute top-[5%] w-[9%] right-[20%]">
     <img id="popup-2" src="/images/overlay-popup.png" alt="popup"
-      class="absolute top-[75%] left-[-10%] z-50 scale-400 origin-top">
+      class="absolute top-[100%] left-[-10%] z-50 scale-400 origin-top">
   </div>
 </template>

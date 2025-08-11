@@ -9,8 +9,8 @@ const props = defineProps({
 
 const playAnimation = () => {
   gsap.to('#popup-3', {
-    y: '0%',
-    duration: 1,
+    y: '-400%',
+    duration: 0.5,
     ease: "power3.out",
   })
   
@@ -33,7 +33,7 @@ const resetAnimation = () => {
     x: '-175%'
   })
   gsap.set('#name', {
-    y: '-200%'
+    y: '-230%'
   })
   gsap.set('#popup-3', {
     y: '400%',
@@ -57,19 +57,21 @@ watch(() => props.isActive, (newVal) => {
 <template>
   <div class="relative h-[100dvh] w-screen overflow-hidden">
     <img src="/images/bg.png" class="h-[100dvh] w-full object-cover" alt="bg" />
-    <p id="name" class="text-6xl font-c absolute top-[10%] right-[5%] rotate-[2deg] z-10">มะต้อง<br/>Matong</p>
+    <p id="name" class="text-5xl font-c absolute top-[15%] right-[5%] rotate-[2deg] z-10 text-white">มะต้อง<br/>Matong</p>
     <img
       id="character-3"
       src="/images/character-3.png"
-      class="w-5/12 absolute z-10 left-[50%] bottom-[10%] translate-x-[-50%]"
+      class="w-4/12 absolute z-10 left-[50%] bottom-[15%] translate-x-[-50%]"
       alt="character-3"
     />
     <img id="green-flower" src="/images/stickers/green-flower.png" alt="green-flower" class="absolute top-[10%] rotate-[5deg] w-[40%] left-[5%]">
-    <img id="four-smile" src="/images/stickers/four-smile.png" alt="four-smile" class="absolute top-[50%] w-[10%] left-[5%]">
-    <img id="star" src="/images/stickers/star.png" alt="star" class="absolute top-[5%] rotate-[5deg] w-[10%] right-[5%]">
-    <img id="roller" src="/images/stickers/roller.png" alt="roller" class="absolute top-[70%] rotate-[5deg] w-[20%] right-[5%]">
+    <img id="four-smile" src="/images/stickers/four-smile.png" alt="four-smile" class="absolute top-[50%] w-[10%] left-[10%]">
+    <img id="star" src="/images/stickers/star.png" alt="star" class="absolute top-[35%] rotate-[5deg] w-[10%] left-[15%]">
+    <img id="star-2" src="/images/stickers/star.png" alt="star" class="absolute top-[30%] rotate-[5deg] w-[10%] right-[15%]">
+    <img id="star-3" src="/images/stickers/star.png" alt="star" class="absolute bottom-[20%] rotate-[5deg] w-[10%] right-[20%]">
+    <img id="roller" src="/images/stickers/roller.png" alt="roller" class="absolute top-[50%] rotate-[5deg] w-[20%] right-[15%]">
     <img id="popup-3" src="/images/overlay-popup.png" alt="popup"
-      class="absolute top-[75%] left-[-10%] z-50 scale-400 origin-top">
+      class="absolute top-[100%] left-[-10%] z-50 scale-400 origin-top">
   </div>
 </template>
 

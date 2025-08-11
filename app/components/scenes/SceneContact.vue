@@ -15,33 +15,15 @@ const a24 = ref(null)
 const a25 = ref(null)
 
 const playAnimation = () => {
-  gsap.to(p2.value, {
-    y: '0%',
-    duration: 1,
+  gsap.to('#popup-contact', {
+    y: '-400%',
+    duration: 0.5,
     ease: "power3.out",
-  })
-  gsap.to(a22.value, {
-    x: '-50%',
-    opacity: 1,
-    duration: 1,
-    ease: "power3.out",
-    onComplete: () => {
-      gsap.to(a22.value, {
-        rotate: 360,
-        duration: 4,
-        repeat: -1,
-        ease: "linear"
-      })
-    }
   })
 }
 const resetAnimation = () => {
-  gsap.set(p2.value, {
+  gsap.set('#popup-contact', {
     y: '400%',
-  })
-  gsap.set(a22.value, {
-    x: '-100%',
-    opacity: 0,
   })
 }
 
@@ -61,28 +43,51 @@ watch(() => props.isActive, (newVal) => {
 <template>
   <div class="relative h-[100dvh] w-screen">
     <img src="/images/bg.png" class="h-[100dvh] w-full object-cover" alt="bg" />
-    <p class="text-6xl font-c absolute top-[10%] right-[5%] rotate-[2deg]">วาด</p>
-    <img
-      ref="characterRef"
-      src="/images/character-contact-1.png"
-      class="w-8/12 absolute z-10 left-[50%] bottom-[50%] translate-x-[-50%] translate-y-[50%]"
-      alt="character-5"
-    />
-    <img
-      src="/images/character-contact-2.png"
-      class="w-8/12 absolute z-10 left-[50%] bottom-[50%] translate-x-[-50%] translate-y-[50%]"
-      alt="character-5"
-    />
-    <img
-      src="/images/character-contact-3.png"
-      class="w-8/12 absolute z-10 left-[50%] bottom-[50%] translate-x-[-50%] translate-y-[50%]"
-      alt="character-5"
-    />
-    <img ref="a21" src="/images/stickers/yellow-smile.png" alt="smile" class="absolute top-[10%] rotate-[5deg] w-[20%] left-[5%]">
-    <img ref="a22" src="/images/stickers/flower-dot.png" alt="flower" class="absolute top-[20%] rotate-[5deg] w-[50%] left-[0%]">
-    <img ref="a23" src="/images/stickers/sharp.png" alt="smile" class="absolute top-[30%] w-[15%] right-[5%]">
-    <img ref="a24" src="/images/stickers/roller.png" alt="smile" class="absolute top-[4%] w-[14%] right-[5%] rotate-[45deg]">
-    <img ref="a25" src="/images/stickers/white-flower.png" alt="smile" class="absolute top-[20%] w-[18%] right-[35%]">
-    <img ref="p2" src="/images/overlay-popup.png" alt="popup" class="absolute top-[75%] left-[-10%] z-50 scale-400 origin-top">
+    <div class="absolute top-[5%] left-[50%] translate-x-[-50%] flex flex-col items-center">
+      <div class="flex scale-[80%]">
+        <cutout-text :style-no="2" text="l" class="" />
+        <cutout-text :style-no="1" text="o" class="" />
+        <cutout-text :style-no="0" text="c" class="" />
+        <cutout-text :style-no="6" text="a" class="" />
+        <cutout-text :style-no="5" text="t" class="" />
+        <cutout-text :style-no="4" text="i" class="" />
+        <cutout-text :style-no="3" text="o" class="" />
+        <cutout-text :style-no="6" text="n" class="" />
+      </div>
+      <img src="/images/qr-location.png" alt="qr-code" class="max-h-[100px]">
+      <p class="text-2xl font-c m-[4%] text-white">สถานีมีผัก คาเฟ่</p>
+      <div class="flex scale-[70%]">
+        <cutout-text :style-no="0" text="c" class="" />
+        <cutout-text :style-no="1" text="o" class="" />
+        <cutout-text :style-no="2" text="n" class="" />
+        <cutout-text :style-no="3" text="t" class="" />
+        <cutout-text :style-no="4" text="a" class="" />
+        <cutout-text :style-no="5" text="c" class="" />
+        <cutout-text :style-no="6" text="t" class="" />
+      </div>
+      <div class="flex gap-2 pl-[5%]">
+        <img
+          src="/images/character-contact-2.png"
+          class="w-[25%]"
+          alt="character-5"
+        />
+        <div class="mt-[10%]">
+          <p class="text-2xl font-c text-white">มะต้อง</p>
+          <p class="text-4xl font-c text-white">094 - 2144455</p>
+        </div>
+      </div>
+      <div class="flex justify-end gap-2 mt-[-70px] pr-[15%]">
+        <div class="mt-[10%]">
+          <p class="text-3xl font-c text-white text-right">วาด</p>
+          <p class="text-4xl font-c text-white text-right">080 - 5453519</p>
+        </div>
+        <img
+          src="/images/character-contact-3.png"
+          class="w-[30%]"
+          alt="character-5"
+        />
+      </div>
+    </div>
+    <img id="popup-contact" src="/images/overlay-popup.png" alt="popup" class="absolute top-[100%] left-[-10%] z-50 scale-400 origin-top">
   </div>
 </template>
