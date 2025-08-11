@@ -57,6 +57,13 @@ watch(() => props.isActive, (newVal) => {
 <template>
   <div class="relative h-[100dvh] w-screen overflow-hidden">
     <img src="/images/bg.png" class="h-[100dvh] w-full object-cover" alt="bg" />
+     <div class="flex absolute top-[5%] left-[50%] translate-x-[-50%] scale-[80%]">
+      <cutout-text :style-no="0" text="g" class="" />
+      <cutout-text :style-no="1" text="r" class="" />
+      <cutout-text :style-no="2" text="o" class="" />
+      <cutout-text :style-no="3" text="o" class="" />
+      <cutout-text :style-no="4" text="m" class="" />
+    </div>
     <p id="name" class="text-5xl font-c absolute top-[15%] right-[5%] rotate-[2deg] z-10 text-white">มะต้อง<br/>Matong</p>
     <img
       id="character-3"
@@ -64,7 +71,7 @@ watch(() => props.isActive, (newVal) => {
       class="w-4/12 absolute z-10 left-[50%] bottom-[15%] translate-x-[-50%]"
       alt="character-3"
     />
-    <img id="green-flower" src="/images/stickers/green-flower.png" alt="green-flower" class="absolute top-[10%] rotate-[5deg] w-[40%] left-[5%]">
+    <img id="green-flower" src="/images/stickers/green-flower.png" alt="green-flower" class="absolute top-[15%] rotate-[5deg] w-[30%] left-[5%]">
     <img id="four-smile" src="/images/stickers/four-smile.png" alt="four-smile" class="absolute top-[50%] w-[10%] left-[10%]">
     <img id="star" src="/images/stickers/star.png" alt="star" class="absolute top-[35%] rotate-[5deg] w-[10%] left-[15%]">
     <img id="star-2" src="/images/stickers/star.png" alt="star" class="absolute top-[30%] rotate-[5deg] w-[10%] right-[15%]">

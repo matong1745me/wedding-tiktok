@@ -39,8 +39,8 @@ watch(() => props.isActive, (newVal) => {
 <template>
   <div class="relative h-[100dvh] w-screen">
     <img src="/images/bg.png" class="h-[100dvh] w-full object-cover" alt="bg" />
-    <div class="absolute top-[10%] left-[5%] h-[8%] w-[80%]">
-      <p class="font-c text-6xl mb-[15%] text-center text-white">Theme</p>
+    <div class="absolute top-[8%] left-[5%] h-[8%] w-[80%]">
+      <p class="font-c text-7xl mb-[15%] text-center text-white ml-[12%]">Theme</p>
       <div class="flex w-[100%] h-[100%] gap-[1%] ml-[6%]">
         <div class="rounded-t-4xl w-[80px] h-[100%] bg-white">
           <div class="rounded-t-4xl bg-[rgb(100,107,56)] h-[80%]">
@@ -74,10 +74,8 @@ watch(() => props.isActive, (newVal) => {
       <img id="manee" src="/images/preload/manee.png" class="w-[30%]" />
       <img id="chujai" src="/images/preload/chujai.png" class="w-[30%]" />
     </div>
-    <img id="white-flower-theme" src="/images/stickers/white-flower.png" alt="white" class="absolute top-[16%] left-[18%] w-[10%]">
-    <img id="cloud-theme" src="/images/stickers/cloud.png" alt="white" class="absolute top-[10%] right-[18%] w-[20%]">
-    <img id="roller-theme" src="/images/stickers/roller.png" alt="white" class="absolute top-[15%] right-[10%] w-[15%]">
-    <img id="plant-theme" src="/images/stickers/plant.png" alt="white" class="absolute top-[5%] left-[5%] w-[15%]">
+    <img id="white-flower-theme" src="/images/stickers/white-flower.png" alt="white" class="absolute top-[10%] left-[15%] w-[15%]">
+    <img id="white-flower-theme" src="/images/stickers/white-flower.png" alt="white" class="absolute top-[10%] right-[15%] w-[15%]">
     <img id="popup-calendar" src="/images/overlay-popup.png" alt="popup" class="absolute top-[100%] left-[-10%] z-50 scale-400 origin-top">
   </div>
 </template>

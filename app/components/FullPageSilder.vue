@@ -16,16 +16,33 @@ import SceneContact from './scenes/SceneContact.vue'
 import SceneGift from './scenes/SceneGift.vue'
 
 const activeIndex = ref(0)
+const swiperInstance = ref(null)
 const onSlideChange = (swiper) => {
   activeIndex.value = swiper.activeIndex
+}
+
+const goToSign = () => {
+  window.open('https://docs.google.com/forms/d/e/1FAIpQLSf-yENjLCk5WP29UBdQfYNCOMLONkz6z84CTYWNIXYWtJvydw/viewform?usp=header')
+}
+
+const goToMap = () => {
+  window.open('https://maps.app.goo.gl/L9SJtgotyUfJCMBd7')
+}
+
+const goToGift = () => {
+  swiperInstance.value?.slideTo(9)
+}
+
+const onSwiper = (swiper) => {
+  swiperInstance.value = swiper
 }
 
 </script>
 
 <template>
   <div class="relative h-[100dvh] w-screen overflow-hidden">
-    <swiper direction="vertical" :slides-per-view="1" :space-between="0" :mousewheel="true" :keyboard="true"
-      :grab-cursor="true" :threshold="5" :speed="400" class="h-[100dvh] w-screen" @slideChange="onSlideChange">
+    <swiper @swiper="onSwiper" direction="vertical" :slides-per-view="1" :space-between="0" :mousewheel="true" :keyboard="true"
+      :grab-cursor="true" :threshold="5" :speed="400" class="h-[100dvh] w-screen swiper-slider" @slideChange="onSlideChange">
       <SwiperSlide>
         <scene-1 :is-active="activeIndex === 0" />
       </SwiperSlide>
@@ -61,15 +78,15 @@ const onSlideChange = (swiper) => {
       <div class="flex flex-col items-center">
         <u-icon name="i-tabler:disc-filled" class="size-10 animate-spin text-white" />
       </div>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center" @click="goToGift">
         <u-icon name="i-tabler-gift-filled" class="size-10 text-white" />
         <span class="text-white">ของขวัญ</span>
       </div>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center" @click="goToSign">
         <u-icon name="i-bitcoin-icons-sign-filled" class="size-10 text-white" />
         <span class="text-white">ลงชื่อ</span>
       </div>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center" @click="goToMap">
         <u-icon name="i-ion-navigate-circle" class="size-10 text-white" />
         <span class="text-white">พิกัด</span>
       </div>

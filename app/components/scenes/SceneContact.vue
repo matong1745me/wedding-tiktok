@@ -21,7 +21,7 @@ const playAnimation = () => {
     ease: "power3.out",
   })
   gsap.to('#character-contact', {
-    rotation: 4,
+    rotation: 184,
     repeat: -1,
     yoyo: true,
     duration: 1,
@@ -83,10 +83,11 @@ watch(() => props.isActive, (newVal) => {
     <img
       id="character-contact"
       src="/images/character-contact-1.png"
-      class="w-8/12 absolute z-10 left-[50%] bottom-[8%] translate-x-[-50%]"
+      class="w-8/12 absolute z-10 left-[50%] bottom-[7%] translate-x-[-50%]"
+      style="transform: scaleX(-1);"
       alt="character-contact"
     />
     <img id="popup-contact" src="/images/overlay-popup.png" alt="popup"
-      class="absolute top-[100%] left-[-10%] z-50 scale-400 origin-top">
+      class="absolute top-[100%] left-[-15%] z-50 scale-400 origin-top">
   </div>
 </template>

@@ -12,9 +12,8 @@ function handlePreloaderDone() {
 
 <template>
   <UApp>
-    <!-- <Preloader v-if="showPreloader" @done="handlePreloaderDone" />
-    <FullPageSlider v-else /> -->
-    <FullPageSlider />
+    <Preloader v-if="showPreloader" @done="handlePreloaderDone" />
+    <FullPageSlider v-else />
   </UApp>
 </template>
 
