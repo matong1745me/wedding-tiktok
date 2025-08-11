@@ -20,6 +20,13 @@ const playAnimation = () => {
     duration: 0.5,
     ease: "power3.out",
   })
+  gsap.to('#character-contact', {
+    rotation: 4,
+    repeat: -1,
+    yoyo: true,
+    duration: 1,
+    ease: "sine.inOut",
+  })
 }
 const resetAnimation = () => {
   gsap.set('#popup-contact', {
@@ -65,29 +72,21 @@ watch(() => props.isActive, (newVal) => {
         <cutout-text :style-no="5" text="c" class="" />
         <cutout-text :style-no="6" text="t" class="" />
       </div>
-      <div class="flex gap-2 pl-[5%]">
-        <img
-          src="/images/character-contact-2.png"
-          class="w-[25%]"
-          alt="character-5"
-        />
-        <div class="mt-[10%]">
-          <p class="text-2xl font-c text-white">มะต้อง</p>
-          <p class="text-4xl font-c text-white">094 - 2144455</p>
+
+      <div class="w-[100%] flex flex-col items-center">
+        <div>
+          <p class="text-3xl font-c text-white">094 - 2144455 (มะต้อง)</p>
+          <p class="text-3xl font-c text-white">080 - 5453519 (วาด)</p>
         </div>
-      </div>
-      <div class="flex justify-end gap-2 mt-[-70px] pr-[15%]">
-        <div class="mt-[10%]">
-          <p class="text-3xl font-c text-white text-right">วาด</p>
-          <p class="text-4xl font-c text-white text-right">080 - 5453519</p>
-        </div>
-        <img
-          src="/images/character-contact-3.png"
-          class="w-[30%]"
-          alt="character-5"
-        />
       </div>
     </div>
-    <img id="popup-contact" src="/images/overlay-popup.png" alt="popup" class="absolute top-[100%] left-[-10%] z-50 scale-400 origin-top">
+    <img
+      id="character-contact"
+      src="/images/character-contact-1.png"
+      class="w-8/12 absolute z-10 left-[50%] bottom-[8%] translate-x-[-50%]"
+      alt="character-contact"
+    />
+    <img id="popup-contact" src="/images/overlay-popup.png" alt="popup"
+      class="absolute top-[100%] left-[-10%] z-50 scale-400 origin-top">
   </div>
 </template>

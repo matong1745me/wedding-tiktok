@@ -13,6 +13,7 @@ import Scene6 from './scenes/Scene6.vue'
 import Scene7 from './scenes/Scene7.vue'
 import SceneTheme from './scenes/SceneTheme.vue'
 import SceneContact from './scenes/SceneContact.vue'
+import SceneGift from './scenes/SceneGift.vue'
 
 const activeIndex = ref(0)
 const onSlideChange = (swiper) => {
@@ -51,6 +52,9 @@ const onSlideChange = (swiper) => {
       </SwiperSlide>
       <SwiperSlide>
         <scene-contact :is-active="activeIndex === 8" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <scene-gift :is-active="activeIndex === 9" />
       </SwiperSlide>
     </swiper>
     <div class="absolute bottom-[15%] right-[2%] z-50 flex flex-col-reverse items-center gap-3">
