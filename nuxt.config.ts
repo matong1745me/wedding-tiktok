@@ -2,6 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  ssr: false,
+  nitro: {
+    prerender: {
+      routes: ['/'] // add all needed pages
+    }
+  },
   modules: ['@nuxt/image', '@nuxt/ui'],
   css: ['~/assets/css/main.css'],
   app: {
