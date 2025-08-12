@@ -14,6 +14,7 @@ import Scene7 from './scenes/Scene7.vue'
 import SceneTheme from './scenes/SceneTheme.vue'
 import SceneContact from './scenes/SceneContact.vue'
 import SceneGift from './scenes/SceneGift.vue'
+import MusicDisc from './MusicDisc.vue'
 
 const activeIndex = ref(0)
 const swiperInstance = ref(null)
@@ -75,9 +76,7 @@ const onSwiper = (swiper) => {
       </SwiperSlide>
     </swiper>
     <div class="absolute bottom-[15%] right-[2%] z-50 flex flex-col-reverse items-center gap-3">
-      <div class="flex flex-col items-center">
-        <u-icon name="i-tabler:disc-filled" class="size-10 animate-spin text-white" />
-      </div>
+      <music-disc />
       <div class="flex flex-col items-center" @click="goToGift">
         <u-icon name="i-tabler-gift-filled" class="size-10 text-white" />
         <span class="text-white">ของขวัญ</span>

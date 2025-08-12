@@ -74,7 +74,7 @@ onMounted(async () => {
       <p ref="text" class="text-gray-600 text-3xl font-c">รอแป๊ปนึงนะ นู้ดดด ...</p>
       <div class="loader">
         <div class="loader-fill"></div>
-      </div> 
+      </div>
     </div>
   </div>
 </template>

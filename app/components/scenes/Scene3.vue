@@ -30,7 +30,7 @@ const playAnimation = () => {
 }
 const resetAnimation = () => {
   gsap.set('#character-3', {
-    x: '-175%'
+    x: '-200%'
   })
   gsap.set('#name', {
     y: '-230%'

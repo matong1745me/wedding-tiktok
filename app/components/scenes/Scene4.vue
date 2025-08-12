@@ -33,7 +33,7 @@ const resetAnimation = () => {
     x: '150%'
   })
   gsap.set('#name-4', {
-    y: '-200%'
+    y: '-250%'
   })
   gsap.set('#popup-4', {
     y: '400%',
