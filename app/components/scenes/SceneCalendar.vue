@@ -1,7 +1,6 @@
 <script setup>
 import { watch, onMounted, ref } from 'vue'
 import gsap from 'gsap'
-import CutoutText from '../CutoutText.vue'
 
 const props = defineProps({
   isActive: Boolean

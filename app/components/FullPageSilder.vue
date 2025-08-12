@@ -22,18 +22,24 @@ const activeIndex = ref(0)
 const swiperInstance = ref(null)
 const onSlideChange = (swiper) => {
   activeIndex.value = swiper.activeIndex
+  show.value = false
 }
+
+const show = ref(true)
 
 const goToSign = () => {
   window.open('https://docs.google.com/forms/d/e/1FAIpQLSf-yENjLCk5WP29UBdQfYNCOMLONkz6z84CTYWNIXYWtJvydw/viewform?usp=header')
+  show.value = false
 }
 
 const goToMap = () => {
   window.open('https://maps.app.goo.gl/L9SJtgotyUfJCMBd7')
+  show.value = false
 }
 
 const goToGift = () => {
   swiperInstance.value?.slideTo(9)
+  show.value = false
 }
 
 const onSwiper = (swiper) => {
@@ -92,9 +98,9 @@ const onSwiper = (swiper) => {
         <span class="text-white">พิกัด</span>
       </div>
       <heart-icon />
-      <click-indicator />
+      <click-indicator v-show="show" />
     </div>
-    <swipe-indicator />
+    <swipe-indicator v-show="show" />
   </div>
 </template>
 
