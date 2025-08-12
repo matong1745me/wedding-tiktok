@@ -15,6 +15,8 @@ import SceneTheme from './scenes/SceneTheme.vue'
 import SceneContact from './scenes/SceneContact.vue'
 import SceneGift from './scenes/SceneGift.vue'
 import MusicDisc from './MusicDisc.vue'
+import SwipeIndicator from './SwipeIndicator.vue'
+import ClickIndicator from './ClickIndicator.vue'
 
 const activeIndex = ref(0)
 const swiperInstance = ref(null)
@@ -90,7 +92,9 @@ const onSwiper = (swiper) => {
         <span class="text-white">พิกัด</span>
       </div>
       <heart-icon />
+      <click-indicator />
     </div>
+    <swipe-indicator />
   </div>
 </template>
 

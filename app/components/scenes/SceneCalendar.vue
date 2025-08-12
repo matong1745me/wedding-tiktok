@@ -52,7 +52,7 @@ watch(() => props.isActive, (newVal) => {
     />
     <img src="/images/stickers/yellow-heart.png" alt="yellow-heart" class="absolute w-[15%] top-[50%] right-[15%]">
     <img src="/images/stickers/green-flower.png" alt="green-flower" class="absolute w-[15%] top-[60%] left-[10%]">
-    <img src="/images/stickers/smile-tag.png" alt="smile-tag" class="absolute w-[25%] top-[45%] left-[10%] rotate-[-20deg]">
+    <img src="/images/stickers/smile-tag.png" alt="smile-tag" class="absolute w-[20%] top-[45%] left-[10%] rotate-[-20deg]">
     <img src="/images/calendar.png" alt="calendar" class="absolute w-[95%] top-[3%] left-[52%] translate-x-[-50%]" />
     <img id="popup-calendar" src="/images/overlay-popup.png" alt="popup" class="absolute top-[100%] left-[-10%] z-50 scale-400 origin-top">
   </div>

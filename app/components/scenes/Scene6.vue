@@ -7,13 +7,6 @@ const props = defineProps({
   isActive: Boolean
 })
 
-const p2 = ref(null)
-const a21 = ref(null)
-const a22 = ref(null)
-const a23 = ref(null)
-const a24 = ref(null)
-const a25 = ref(null)
-
 const playAnimation = () => {
 }
 const resetAnimation = () => {
