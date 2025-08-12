@@ -2,6 +2,9 @@
 import { ref, onMounted, nextTick } from 'vue'
 import gsap from 'gsap'
 
+import preloadAssets from '~/plugins/preloadAssets'
+import allAssets from '~/plugins/allAssets'
+
 const emit = defineEmits(['done'])
 
 const visible = ref(true)
@@ -23,6 +26,9 @@ function startLoopAnimation() {
     stagger: 0.08,
     ease: 'sine.inOut'
   })
+}
+
+function runExitAnimation() {
   gsap.to(".loader-fill", {
     duration: 4.2,
     right: "2px",
@@ -35,32 +41,24 @@ function startLoopAnimation() {
         yoyo: true,
         ease: "steps(1)"
       })
+      const tl = gsap.timeline({
+        onComplete: () => {
+          emit('done') // tell parent to mount main page
+        }
+      })
+      tl
+        .fromTo(loader.value, { scale: 0.8, opacity: 0 }, { scale: 1.2, opacity: 1, duration: 0.6, ease: 'back.out(1.7)' })
+        .to(loader.value, { scale: 0, duration: 0.4, ease: 'power2.inOut' })
+        .to(preloader.value, { opacity: 0, duration: 0.6, ease: 'power2.out' }, '+=0.2')
     }
   })
-}
-
-function runExitAnimation() {
-  const tl = gsap.timeline({
-    onComplete: () => {
-      emit('done') // tell parent to mount main page
-    }
-  })
-  tl.fromTo(loader.value, { scale: 0.8, opacity: 0 }, { scale: 1.2, opacity: 1, duration: 0.6, ease: 'back.out(1.7)' })
-    .to(loader.value, { scale: 0, duration: 0.4, ease: 'power2.inOut' })
-    .to(preloader.value, { opacity: 0, duration: 0.6, ease: 'power2.out' }, '+=0.2')
 }
 
 onMounted(async () => {
   await nextTick()
   startLoopAnimation() // Start immediately
-
-  if (document.readyState === 'complete') {
-    setTimeout(() => {
-      runExitAnimation()
-    }, 5000)
-  } else {
-    window.addEventListener('load', runExitAnimation, { once: true })
-  }
+  await Promise.all(allAssets.map(preloadAssets))
+  runExitAnimation()
 })
 </script>
 
