@@ -18,11 +18,20 @@ import MusicDisc from './MusicDisc.vue'
 import SwipeIndicator from './SwipeIndicator.vue'
 import ClickIndicator from './ClickIndicator.vue'
 
+const hideIndicator = [4,5,6]
 const activeIndex = ref(0)
 const swiperInstance = ref(null)
 const onSlideChange = (swiper) => {
   activeIndex.value = swiper.activeIndex
+  if (hideIndicator.includes(swiper.activeIndex)) {
+    showIndicator.value = false
+  }
+  else {
+    showIndicator.value = true
+  }
 }
+
+const showIndicator = ref(true)
 
 const goToSign = () => {
   window.open('https://docs.google.com/forms/d/e/1FAIpQLSf-yENjLCk5WP29UBdQfYNCOMLONkz6z84CTYWNIXYWtJvydw/viewform?usp=header')
@@ -92,9 +101,9 @@ const onSwiper = (swiper) => {
         <span class="text-white">พิกัด</span>
       </div>
       <heart-icon />
-      <click-indicator />
+      <click-indicator v-show="showIndicator" />
     </div>
-    <swipe-indicator />
+    <swipe-indicator v-show="showIndicator" />
   </div>
 </template>
 

@@ -39,7 +39,7 @@ watch(() => props.isActive, (newVal) => {
 <template>
   <div class="relative h-[100dvh] w-screen">
     <img src="/images/bg.png" class="h-[100dvh] w-full object-cover" alt="bg" />
-    <div class="absolute top-[8%] left-[5%] h-[8%] w-[80%]">
+    <div class="absolute top-[7%] left-[5%] h-[8%] w-[80%]">
       <p class="font-c text-7xl mb-[15%] text-center text-white ml-[12%]">Theme</p>
       <div class="flex w-[100%] h-[100%] gap-[1%] ml-[6%]">
         <div class="rounded-t-4xl w-[80px] h-[100%] bg-white">

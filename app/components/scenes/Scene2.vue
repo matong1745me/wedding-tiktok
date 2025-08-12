@@ -107,7 +107,7 @@ watch(() => props.isActive, (newVal) => {
       class="absolute top-[10%] rotate-[5deg] w-[15%] left-[5%]">
     <img id="dot-2" src="/images/stickers/flower-dot.png" alt="flower"
       class="absolute top-[20%] rotate-[5deg] w-[50%] left-[0%] translate-x-[-100%]">
-    <img id="sharp-2" src="/images/stickers/sharp.png" alt="smile" class="absolute top-[30%] w-[15%] right-[5%]">
+    <img id="sharp-2" src="/images/stickers/sharp.png" alt="smile" class="absolute top-[25%] w-[15%] right-[5%]">
     <img id="roller-2" src="/images/stickers/roller.png" alt="smile"
       class="absolute top-[4%] w-[14%] right-[5%] rotate-[45deg]">
     <img id="flower-2" src="/images/stickers/white-flower.png" alt="smile" class="absolute top-[5%] w-[9%] right-[20%]">
