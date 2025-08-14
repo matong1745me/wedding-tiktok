@@ -68,7 +68,7 @@ watch(() => props.isActive, (newVal) => {
     <img
       id="character-3"
       src="/images/character-3.png"
-      class="w-4/12 absolute z-10 left-[50%] bottom-[15%] translate-x-[-70%]"
+      class="w-4/12 absolute z-10 left-[50%] bottom-[15%] translate-x-[-50%]"
       alt="character-3"
     />
     <img id="green-flower" src="/images/stickers/green-flower.png" alt="green-flower" class="absolute top-[15%] rotate-[5deg] w-[30%] left-[5%]">
