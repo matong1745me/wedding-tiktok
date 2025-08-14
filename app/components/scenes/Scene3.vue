@@ -16,7 +16,7 @@ const playAnimation = () => {
   
   const nameTl = gsap.timeline()
   nameTl.to('#character-3', {
-    x: '0%',
+    x: '-50%',
     opacity: 1,
     duration: 1.2,
     ease: "bounce.out"
