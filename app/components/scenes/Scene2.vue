@@ -100,11 +100,11 @@ watch(() => props.isActive, (newVal) => {
 <template>
   <div class="relative h-[100dvh] w-screen">
     <img src="/images/bg.png" class="h-[100dvh] w-full object-cover" alt="bg" />
-    <span animate id="mainText" class="text-6xl font-c absolute top-[10%] right-[10%] rotate-[2deg] text-white">แต่งงานแล้ว</span>
+    <span animate id="mainText" class="text-6xl font-c absolute top-[10%] right-[10%] rotate-[2deg] text-white z-50">แต่งงานแล้ว</span>
     <img id="character-2" src="/images/character-2.png" class="w-9/12 absolute z-10 left-[5%] bottom-[15%]"
       alt="character-2" />
     <img id="smile-2" src="/images/stickers/yellow-smile.png" alt="smile"
-      class="absolute top-[10%] rotate-[5deg] w-[15%] left-[5%]">
+      class="absolute top-[5%] rotate-[5deg] w-[10%] left-[5%]">
     <img id="dot-2" src="/images/stickers/flower-dot.png" alt="flower"
       class="absolute top-[20%] rotate-[5deg] w-[50%] left-[0%] translate-x-[-100%]">
     <img id="sharp-2" src="/images/stickers/sharp.png" alt="smile" class="absolute top-[25%] w-[15%] right-[5%]">

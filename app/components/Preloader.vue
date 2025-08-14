@@ -2,8 +2,8 @@
 import { ref, onMounted, nextTick } from 'vue'
 import gsap from 'gsap'
 
-import preloadAssets from '~/plugins/preloadAssets'
-import allAssets from '~/plugins/allAssets'
+import preloadAssets from '~/utils/preloadAssets'
+import allAssets from '~/utils/allAssets'
 
 const emit = defineEmits(['done'])
 
@@ -41,15 +41,17 @@ function runExitAnimation() {
         yoyo: true,
         ease: "steps(1)"
       })
-      const tl = gsap.timeline({
-        onComplete: () => {
-          emit('done') // tell parent to mount main page
-        }
-      })
-      tl
-        .fromTo(loader.value, { scale: 0.8, opacity: 0 }, { scale: 1.2, opacity: 1, duration: 0.6, ease: 'back.out(1.7)' })
-        .to(loader.value, { scale: 0, duration: 0.4, ease: 'power2.inOut' })
-        .to(preloader.value, { opacity: 0, duration: 0.6, ease: 'power2.out' }, '+=0.2')
+      setTimeout(() => {
+        const tl = gsap.timeline({
+          onComplete: () => {
+            emit('done') // tell parent to mount main page
+          }
+        })
+        tl
+          .fromTo(loader.value, { scale: 0.8, opacity: 0 }, { scale: 1.2, opacity: 1, duration: 0.6, ease: 'back.out(1.7)' })
+          .to(loader.value, { scale: 0, duration: 0.4, ease: 'power2.inOut' })
+          .to(preloader.value, { opacity: 0, duration: 0.6, ease: 'power2.out' }, '+=0.2')
+      }, 500)
     }
   })
 }

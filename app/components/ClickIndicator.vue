@@ -7,8 +7,8 @@
 <style scoped>
 
 @keyframes up-wiggle {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { transform: translateY(-10px); }
+  50% { transform: translateY(-20px); }
 }
 .animate-up-wiggle {
   animation: up-wiggle 1.6s ease-in-out infinite;

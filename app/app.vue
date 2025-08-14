@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import FullPageSlider from '~/components/FullPageSilder.vue'
 import Preloader from '~/components/Preloader.vue'
+import BackgroundMusic from './components/BackgroundMusic.vue'
 
 const showPreloader = ref(true)
 
@@ -14,6 +15,7 @@ function handlePreloaderDone() {
   <UApp>
     <Preloader v-if="showPreloader" @done="handlePreloaderDone" />
     <FullPageSlider v-else />
+    <background-music />
   </UApp>
 </template>
 
