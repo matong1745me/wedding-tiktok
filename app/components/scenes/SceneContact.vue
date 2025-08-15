@@ -62,7 +62,7 @@ watch(() => props.isActive, (newVal) => {
         <cutout-text :style-no="6" text="n" class="" />
       </div>
       <img src="/images/qr-location.png" alt="qr-code" class="max-h-[100px]">
-      <p class="text-2xl font-c mt-[4%] text-white">สถานีมีผัก คาเฟ่</p>
+      <p class="text-2xl font-c mt-[4%] text-white">สถานีผัก & คนรักกาแฟ</p>
       <p class="font-c text-2xl z-50 text-nowrap text-white">15:00 - 20:00 น.</p>
       <div class="flex scale-[70%] mt-[-2%] mb-[-5%]">
         <cutout-text :style-no="0" text="c" class="" />
