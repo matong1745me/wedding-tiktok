@@ -1,6 +1,9 @@
 <template>
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center text-white pointer-events-none z-[999]">
-    <u-icon id="swipe-indicator" name="i-material-symbols-swipe-vertical-rounded" class="size-10 text-white shadow-2xl rotate-[-15deg] animate-swipe-wiggle" />
+  <div class="absolute bottom-6 left-0 right-0 flex flex-col items-center text-white pointer-events-none z-[999]">
+    <div class="relative">
+      <u-icon id="swipe-indicator" name="i-material-symbols-swipe-vertical-rounded" class="absolute bottom-0 translate-x-[-50%] size-21 text-black text-shadow-lg rotate-[-15deg] animate-swipe-wiggle" />
+      <u-icon id="swipe-indicator" name="i-material-symbols-swipe-vertical-rounded" class="absolute bottom-0 translate-x-[-50%] size-20 text-white text-shadow-lg rotate-[-15deg] animate-swipe-wiggle" />
+    </div>
   </div>
 </template>
 

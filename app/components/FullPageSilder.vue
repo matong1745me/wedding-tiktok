@@ -17,6 +17,7 @@ import SceneGift from './scenes/SceneGift.vue'
 import MusicDisc from './MusicDisc.vue'
 import SwipeIndicator from './SwipeIndicator.vue'
 import ClickIndicator from './ClickIndicator.vue'
+import PageCounter from './PageCounter.vue'
 
 const hideIndicator = [4,5,6]
 const activeIndex = ref(0)
@@ -101,9 +102,10 @@ const onSwiper = (swiper) => {
         <span class="text-white">พิกัด</span>
       </div>
       <heart-icon />
-      <click-indicator v-show="showIndicator" />
+      <click-indicator/>
     </div>
-    <swipe-indicator v-show="showIndicator" />
+    <swipe-indicator />
+    <page-counter :current="activeIndex + 1"/>
   </div>
 </template>
 
